@@ -1,0 +1,15 @@
+[project]
+name = "personal-expense-tracker-api"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "bcrypt==3.2.2",
+    "fastapi[standard]>=0.162.2",
+    "passlib[bcrypt]>=1.7.4",
+    "psycopg[binary]>=3.3.8",
+    "pyjwt>=2.15.1",
+    "python-multipart>=0.0.33",
+    "sqlalchemy>=2.1.8",
+]
