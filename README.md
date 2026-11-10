@@ -231,7 +231,7 @@ Personal-Expense-Tracker-API/
 ## ⚠️ Safety notes & limitations
 
 > [!WARNING]
-> - `database.py` and `auth_utils.py` still contain **fallback defaults** (a DB password and a secret key) used when `.env` is missing. Remove them before sharing the code or deploying, and rotate any credential that was ever committed.
+> - `DATABASE_URL` and `SECRET_KEY` are **required**. The app stops at startup with an error if they are missing from `.env`. Rotate any credential that was ever committed.
 > - Always set a strong, unique `SECRET_KEY` in `.env`. Never commit `.env`.
 > - Tables are made with `create_all`. There are no migrations, so changing a model won't alter existing tables.
 > - No tests, rate limiting, or HTTPS setup are included.
@@ -246,7 +246,7 @@ Personal-Expense-Tracker-API/
 - [x] Categories CRUD with duplicate-name check
 - [x] `GET /users/me`
 - [x] Input validation and env-based config
-- [ ] Remove hardcoded fallback secrets
+- [x] Remove hardcoded fallback secrets
 - [ ] Database migrations (Alembic)
 - [ ] Automated tests
 - [ ] Filter / sort / paginate expenses

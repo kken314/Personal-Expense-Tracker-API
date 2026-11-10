@@ -5,10 +5,9 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 
 load_dotenv()
 
-SQLALCHEMY_DATABASE_URL = os.getenv(
-    "DATABASE_URL",
-    "postgresql://postgres:Kken_1706@localhost:5432/ExpenseTracker"
-)
+SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
+if not SQLALCHEMY_DATABASE_URL:
+    raise RuntimeError("DATABASE_URL is not set. Add it to your .env file.")
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
